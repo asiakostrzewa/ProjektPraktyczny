@@ -1,9 +1,10 @@
 public class Main {
+
+    private static final String URL = "https://api.adviceslip.com/";
+
     public static void main(String[] args) {
-
-        AdviseClient adviseClient = new AdviseClient();
-        Slip slip = adviseClient.fetchRandomAdvice();
+        HttpClient httpClient = new HttpClient();
+        Slip slip = httpClient.fetch(URL + "advice", SlipResponse.class).getSlip();
         System.out.println(slip.getAdvice());
-
     }
 }
