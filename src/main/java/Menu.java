@@ -8,10 +8,9 @@ import java.util.Scanner;
 public class Menu {
     private final AdviceService adviceService;
 
-    public Menu(AdviceService adviceService){
+    public Menu(AdviceService adviceService) {
         this.adviceService = adviceService;
     }
-
     public void displayMenu() {
 
         boolean contineuing = true;
@@ -37,27 +36,21 @@ public class Menu {
                     break;
                 }
                 case 1: {
-                    SlipDto randomAdvice = adviceService.getRandomAdvice();
-                    String advice = (String) randomAdvice.getAdvice();
-                    adviceService.saveAdvice(randomAdvice); //to co przyszło z sieci zapisujemy do bazy danych
-
-                    System.out.println("");
-                    System.out.println("****** Cytat dla Ciebie ******");
-                    System.out.println(advice);
-                    System.out.println("******************************");
-                    break;
-
                     //todo: w case1: Małe menu w nowej metodzie (w while (flaga)) z trzema opcjami: 1 - losuj następny cytat, 2 - zapisz aktualny cytat do bazy danych (dodaj do ulubionych), 3 - cofnij do menu głównego
+                    SmallMenu smallMenu = new SmallMenu(adviceService);
+                    smallMenu.smallMenu1();
+                    break;
                 }
                 case 2: {
                     System.out.println("Pracujemy nad tym");
                     break;
                 }
                 case 3: {
-                    List allAdvices = adviceService.getAllAdvices();
-                    System.out.println(Arrays.toString(allAdvices.toArray())); //drukujemy pętlą/for-each'em lub ArrayListą
-                    break;
                     // todo w case3: Małe menu w osobnej metodzie (pętla while (flaga) wyjście z pętli na 0) z trzema opcjami: 1 - wyświetl moje ulubione, 2 - usuń z ulubionych (prośba o podanie id), 0 - powrót do menu głównego
+                    /*List allAdvices = adviceService.getAllAdvices();
+                    System.out.println(Arrays.toString(allAdvices.toArray())); //drukujemy pętlą/for-each'em lub ArrayListą*/
+                    System.out.println("Pracujemy nad tym");
+                    break;
                 }
                 case -1: {
                     System.out.println("Wpisz liczbę!");
