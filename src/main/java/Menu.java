@@ -40,10 +40,14 @@ public class Menu {
                     SlipDto randomAdvice = adviceService.getRandomAdvice();
                     String advice = (String) randomAdvice.getAdvice();
                     adviceService.saveAdvice(randomAdvice); //to co przyszło z sieci zapisujemy do bazy danych
+
+                    System.out.println("");
                     System.out.println("****** Cytat dla Ciebie ******");
                     System.out.println(advice);
                     System.out.println("******************************");
                     break;
+
+                    //todo: w case1: Małe menu w nowej metodzie (w while (flaga)) z trzema opcjami: 1 - losuj następny cytat, 2 - zapisz aktualny cytat do bazy danych (dodaj do ulubionych), 3 - cofnij do menu głównego
                 }
                 case 2: {
                     List<Slip> allAdvices = adviceService.getAllAdvices();
@@ -51,15 +55,17 @@ public class Menu {
                     break;
                 }
                 case 3: {
-                    System.out.println("Pracujemy nad tym");
+                    List allAdvices = adviceService.getAllAdvices();
+                    System.out.println(Arrays.toString(allAdvices.toArray())); //drukujemy pętlą/for-each'em lub ArrayListą
                     break;
+                    // todo w case3: Małe menu w osobnej metodzie (pętla while (flaga) wyjście z pętli na 0) z trzema opcjami: 1 - wyświetl moje ulubione, 2 - usuń z ulubionych (prośba o podanie id), 0 - powrót do menu głównego
                 }
                 case -1: {
                     System.out.println("Wpisz liczbę!");
                     break;
                 }
                 default: {
-                    System.out.println("Funkcja nie obsługiwana");
+                    System.out.println("Funkcja nieobsługiwana");
                 }
             }
         }
