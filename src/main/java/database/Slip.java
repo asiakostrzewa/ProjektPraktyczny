@@ -25,6 +25,8 @@ public class Slip {
         this.advice = advice;
     }
 
+    public Slip(){} //dodajemy bezparametrowy Slip, żeby ładnie drukowała się ArrayLista
+
     public long getId() {
         return id;
     }
@@ -39,5 +41,14 @@ public class Slip {
 
     public void setAdvice(String advice) {
         this.advice = advice;
+    }
+
+    @Override
+    public String toString() {
+        return "Slip{" +
+                "slipId=" + slipId +
+                ", id=" + id +
+                ", advice='" + advice + '\'' +
+                '}';
     }
 }
