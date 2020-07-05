@@ -1,1 +1,9 @@
+database\SlipDao.class
 Main.class
+http\HttpClient.class
+database\HibernateUtil.class
+http\SlipDto.class
+http\SlipResponse.class
+AdviceService.class
+Menu.class
+database\Slip.class

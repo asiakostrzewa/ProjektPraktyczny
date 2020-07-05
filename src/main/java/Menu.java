@@ -1,3 +1,6 @@
+import database.Slip;
+import http.SlipDto;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -32,8 +35,11 @@ public class Menu {
                     break;
                 }
                 case 1: {
+                    SlipDto randomAdvice = adviceService.getRandomAdvice();
+                    String advice = (String) randomAdvice.getAdvice();
+                    adviceService.saveAdvice(randomAdvice); //to co przyszło z sieci zapisujemy do bazy danych
                     System.out.println("****** Cytat dla Ciebie ******");
-                    System.out.println(adviceService.getRandomAdvice().getAdvice());
+                    System.out.println(advice);
                     System.out.println("******************************");
                     break;
                 }

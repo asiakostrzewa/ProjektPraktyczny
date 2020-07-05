@@ -1,8 +1,10 @@
-public class Slip {
+package http;
+
+public class SlipDto {
     private long id;
     private String advice;
 
-    public Slip(long id, String advice) {
+    public SlipDto(long id, String advice) { //DTO - data transfer object
         this.id = id;
         this.advice = advice;
     }
@@ -22,4 +24,5 @@ public class Slip {
     public void setAdvice(String advice) {
         this.advice = advice;
     }
+
 }

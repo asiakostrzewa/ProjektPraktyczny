@@ -1,3 +1,5 @@
+package http;
+
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -5,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+/*klasa T = database.Slip response.
+Zamieniliśmy na T bo będziemy wielokrotnie powtarzać, zachowująć zasadę DRY - don't repeat yourself*/
 
 public class HttpClient {
     public <T> T fetch(String uri, Class<T> clazz) {
