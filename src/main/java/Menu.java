@@ -1,12 +1,14 @@
 import database.Slip;
 import http.SlipDto;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
     private final AdviceService adviceService;
 
-    public Menu(AdviceService adviceService){
+    public Menu(AdviceService adviceService) {
         this.adviceService = adviceService;
     }
 
@@ -44,7 +46,8 @@ public class Menu {
                     break;
                 }
                 case 2: {
-                    System.out.println("Pracujemy nad tym");
+                    List<Slip> allAdvices = adviceService.getAllAdvices();
+                    System.out.println(Arrays.toString(allAdvices.toArray()));
                     break;
                 }
                 case 3: {
@@ -60,6 +63,5 @@ public class Menu {
                 }
             }
         }
-
     }
 }
