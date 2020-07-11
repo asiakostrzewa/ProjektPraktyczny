@@ -1,6 +1,7 @@
 package http;
 
 public class SlipDto {
+
     private long id;
     private String advice;
 
