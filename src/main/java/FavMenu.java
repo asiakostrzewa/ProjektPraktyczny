@@ -1,4 +1,5 @@
 import database.Slip;
+import database.SlipDao;
 import http.SlipDto;
 
 import java.util.Arrays;
@@ -42,6 +43,9 @@ public class FavMenu {
                 }
                 case 2: {
                     System.out.println("Podaj ID do usunięcia");
+                    int deleteID = scanner.nextInt();
+                    SlipDao slipdao = new SlipDao();
+                    slipdao.deleteID(deleteID);
                     int id = scanner.nextInt(); // wywołaj metodę usuń w slipdao z parametrem id
 
 
