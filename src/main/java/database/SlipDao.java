@@ -52,4 +52,7 @@ public class SlipDao<T> {
         }
         return list;
     }
+
+    public void delete(Slip slip) {}
+    // todo
 }
