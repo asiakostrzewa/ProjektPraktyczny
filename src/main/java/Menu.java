@@ -11,6 +11,7 @@ public class Menu {
     public Menu(AdviceService adviceService) {
         this.adviceService = adviceService;
     }
+
     public void displayMenu() {
 
         boolean contineuing = true;
@@ -49,15 +50,15 @@ public class Menu {
                     break;
                 }
                 case 2: {
-                    System.out.println("Pracujemy nad tym");
+                    List<Slip> allAdvices = adviceService.getAllAdvices();
+                    System.out.println(Arrays.toString(allAdvices.toArray()));
                     break;
                 }
                 case 3: {
-                    // todo w case3: Małe menu w osobnej metodzie (pętla while (flaga) wyjście z pętli na 0) z trzema opcjami: 1 - wyświetl moje ulubione, 2 - usuń z ulubionych (prośba o podanie id), 0 - powrót do menu głównego
-                    /*List allAdvices = adviceService.getAllAdvices();
-                    System.out.println(Arrays.toString(allAdvices.toArray())); //drukujemy pętlą/for-each'em lub ArrayListą*/
-                    System.out.println("Pracujemy nad tym");
+                    new FavMenu (adviceService).displayFavMenu();
+
                     break;
+                    // todo w case3: Małe menu w osobnej metodzie (pętla while (flaga) wyjście z pętli na 0) z trzema opcjami: 1 - wyświetl moje ulubione, 2 - usuń z ulubionych (prośba o podanie id), 0 - powrót do menu głównego
                 }
                 case -1: {
                     System.out.println("Wpisz liczbę!");
@@ -68,6 +69,5 @@ public class Menu {
                 }
             }
         }
-
     }
 }
