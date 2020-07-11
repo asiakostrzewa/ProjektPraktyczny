@@ -14,7 +14,7 @@ public class SmallMenu {
         this.adviceService = adviceService;
     }
 
-    public void smallMenu1() {
+    public void smallMenu1(SlipDto randomAdvice) {
         boolean contd = true;
 
         while (contd) {
@@ -36,9 +36,8 @@ public class SmallMenu {
                     break;
                 }
                 case 1: {
-                    SlipDto randomAdvice = adviceService.getRandomAdvice();
+                    randomAdvice = adviceService.getRandomAdvice();
                     String advice = (String) randomAdvice.getAdvice();
-
                     System.out.println("");
                     System.out.println("****** Cytat dla Ciebie ******");
                     System.out.println(advice);
@@ -46,9 +45,7 @@ public class SmallMenu {
                     break;
                 }
                 case 2: {
-                    //todo Dodaj do ulubionych
-                    SlipDto randomAdvice = adviceService.getRandomAdvice();
-                    String advice = (String) randomAdvice.getAdvice();
+                    //Dodaj do ulubionych
                     adviceService.saveAdvice(randomAdvice); //to co przyszło z sieci zapisujemy do bazy danych
                     System.out.println("Cytat został zapisany do ulubionych");
                     break;

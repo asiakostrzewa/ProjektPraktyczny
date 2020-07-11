@@ -36,9 +36,16 @@ public class Menu {
                     break;
                 }
                 case 1: {
+                    SlipDto randomAdvice = adviceService.getRandomAdvice();
+                    String advice = (String) randomAdvice.getAdvice();
+
+                    System.out.println("");
+                    System.out.println("****** Cytat dla Ciebie ******");
+                    System.out.println(advice);
+                    System.out.println("******************************");
                     //todo: w case1: Małe menu w nowej metodzie (w while (flaga)) z trzema opcjami: 1 - losuj następny cytat, 2 - zapisz aktualny cytat do bazy danych (dodaj do ulubionych), 3 - cofnij do menu głównego
                     SmallMenu smallMenu = new SmallMenu(adviceService);
-                    smallMenu.smallMenu1();
+                    smallMenu.smallMenu1(randomAdvice);
                     break;
                 }
                 case 2: {
