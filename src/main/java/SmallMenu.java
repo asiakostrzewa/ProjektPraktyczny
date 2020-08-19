@@ -16,7 +16,6 @@ public class SmallMenu {
 
     public void smallMenu1(SlipDto randomAdvice) {
         boolean contd = true;
-
         while (contd) {
             System.out.println();
             System.out.println("Wybierz jedną z opcji:");
@@ -36,8 +35,8 @@ public class SmallMenu {
                     break;
                 }
                 case 1: {
-                    randomAdvice = adviceService.getRandomAdvice();
-                    String advice = (String) randomAdvice.getAdvice();
+                    //randomAdvice = adviceService.getRandomAdvice();
+                    String advice = randomAdvice.getAdvice();
                     System.out.println("");
                     System.out.println("****** Cytat dla Ciebie ******");
                     System.out.println(advice);

@@ -1,0 +1,5 @@
+Aplikacja menadżer cytatów i złotych myśli
+
+Projekt praktyczny realizowany w ramach kursu SDA
+
+Wykorzystuje API https://api.adviceslip.com/ do pobierania losowych cytatów i zapisuje je do bazy danych MySQL poprzez ORM Hibernate. Użytkownik ma możliwość zarządznia swoimi ulubionymi cytatami, dodaj, usuń, pokaż.

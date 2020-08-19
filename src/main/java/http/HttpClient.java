@@ -1,6 +1,7 @@
 package http;
 
 import com.google.gson.Gson;
+import org.apache.poi.ss.formula.functions.T;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.net.URL;
 Zamieniliśmy na T bo będziemy wielokrotnie powtarzać, zachowująć zasadę DRY - don't repeat yourself*/
 
 public class HttpClient {
-    public <T> T fetch(String uri, Class<T> clazz) {
+    public String fetch(String uri) {
         try {
             URL url = new URL(uri);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -24,9 +25,10 @@ public class HttpClient {
                 content.append(inputLine);
             }
             in.close();
-            Gson gson = new Gson();
+            /*Gson gson = new Gson();
             T object = gson.fromJson(content.toString(), clazz);
-            return object;
+            return object;*/
+            return content.toString();
         } catch (IOException e) {
             e.printStackTrace();
         }

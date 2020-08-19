@@ -12,12 +12,21 @@ public class Slip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long slipId;
+
+    public long getSlipId(){
+        return slipId;
+    }
+
+    public void setSlipId(long slipId){
+        this.slipId = slipId;
+    }
+
     private long id;
     private String advice;
 
     public Slip(SlipDto slipDto){
-    this.id = slipDto.getId();
-    this.advice = slipDto.getAdvice();
+        this.id = slipDto.getId();
+        this.advice = slipDto.getAdvice();
     }
 
     public Slip(long id, String advice) {
@@ -49,6 +58,6 @@ public class Slip {
                 "slipId=" + slipId +
                 ", id=" + id +
                 ", advice='" + advice + '\'' +
-                '}';
+                '}' + "\n";
     }
 }

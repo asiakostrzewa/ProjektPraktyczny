@@ -34,16 +34,15 @@ public class FavMenu {
                     break;
                 }
                 case 1: {
-                    List<Slip> allAdvices = adviceService.getAllAdvices();
+                    /*List<Slip> allAdvices = adviceService.getAllAdvices();
                     for (Slip slip : allAdvices) {
                         System.out.println(slip);
-                    }
+                    }*/
                     break;
                 }
                 case 2: {
                     System.out.println("Podaj ID do usunięcia");
                     int id = scanner.nextInt(); // wywołaj metodę usuń w slipdao z parametrem id
-
 
                     break;
                 }
