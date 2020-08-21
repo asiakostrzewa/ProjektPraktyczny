@@ -157,8 +157,8 @@ public class Menu {
             System.out.println("Wybierz jedną z opcji:");
             System.out.println("1. Wyświetl ulubione cytaty");
             System.out.println("2. Usuń cytat z ulubionych");
-            //System.out.println("3. Eksport do pliku ulubionych cytatów");
-            //System.out.println("4. Eksport do Excel'a");
+            System.out.println("3. Eksport do pliku ulubionych cytatów");
+            System.out.println("4. Eksport do Excel'a");
             System.out.println("0. Powrót do Menu Głównego");
 
             int nextInt = -1; //zabezpieczenie przed wpisaniem czegoś innego niż liczba
@@ -184,14 +184,14 @@ public class Menu {
                     Id = scanner.nextLong();
                     adviceService.deleteID(Id); //wywołanie metody Usuń w slipdao z parametrem id
                 }
-                /*case 3: {
+                case 3: {
                     adviceExporter.exportToFile(allAdvice);
                     break;
                 }
                 case 4: {
                     adviceExporter.exportToSheet(allAdvice);
                     break;
-                }*/
+                }
                 case -1: {
                     System.out.println("Wpisz liczbę!");
                     break;
