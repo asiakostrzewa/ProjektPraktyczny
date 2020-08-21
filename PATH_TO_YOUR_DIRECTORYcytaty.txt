@@ -1,0 +1,7 @@
+| slipId = 1 | id = 115 | advice = One of the top five regrets people have is that they didn't have the courage to be their true self.
+| slipId = 2 | id = 136 | advice = Everything matters, but nothing matters that much.
+| slipId = 3 | id = 134 | advice = The person who never made a mistake never made anything.
+| slipId = 4 | id = 54 | advice = The more ideas that you give away, the more ideas that will come to you.
+| slipId = 5 | id = 57 | advice = If you get stuck, try doing the opposite of what the solution requires.
+| slipId = 6 | id = 40 | advice = Never run with scissors.
+| slipId = 7 | id = 6 | advice = Never cut your own fringe.
